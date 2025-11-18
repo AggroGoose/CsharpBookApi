@@ -5,9 +5,13 @@ namespace CsharpBookApi
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+
+            // add Services
+            builder.Services.AddControllers();
+
             var app = builder.Build();
 
-            app.MapGet("/", () => "Hello World!");
+            app.MapControllers();
 
             app.Run();
         }
